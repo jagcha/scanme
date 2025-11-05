@@ -62,7 +62,7 @@ At each 2-hour increment, computations are triggered using the data inside $w_1$
 The **past activity threshold** for `ID 470` at iteration `3240` is defined as:  
 
 $$
-T_{a,470,3240} = a_{3_1, 470, 3240} + 2 \times a_{3_2, 470, 3240} = 41.9 + 2 \times 10.5 = 62.9
+T_{a,470,3240} = a_{3_1, 470, 3240} + u_a \times a_{3_2, 470, 3240} = 41.9 + 2 \times 10.5 = 62.9
 $$  
 
 Similarly, for **rumination**:  
@@ -75,7 +75,7 @@ Similarly, for **rumination**:
 The **past rumination threshold** is defined as:  
 
 $$
-T_{r,470,3240} = r_{3_1, 470, 3240} - 0.5 \times r_{3_2, 470, 3240} = 48 - 0.5 \times 14.7 = 40.65 \approx 40.6
+T_{r,470,3240} = r_{3_1, 470, 3240} - u_r \times r_{3_2, 470, 3240} = 48 - 0.5 \times 14.7 = 40.65 \approx 40.6
 $$
 
 For a given iteration $t$ and `ID=470`, a **change in behavior** is flagged when:  
@@ -84,12 +84,31 @@ $$
 a_{1, 470, t} >= T_{a,470,t} \quad \text{and} \quad r_{1, 470, t} <= T_{2,470,t}
 $$
 
-If the condition holds, a variable $F_{470,t} = 1$ is defined. Otherwise, $F_{470,t} = 0$.  
+If the condition holds, a variable $\hat{F}_{470,t} = 1$ is defined. Otherwise, $\hat{F}_{470,t} = 0$.  
 
-Once the status of $F_{470,t}$ is defined, we proceed to repeat the process for $t+1$. This hapens iterativewlly, from the first to the last behavioral record of animal 470.
+Once the status of $\hat{F}_{470,t}$ is defined, we proceed to repeat the process for $t+1$. This hapens iterativelly, from the first to the last behavioral record of animal 470.
 
-After scanning the entire chronological sequence with the sliding window, a vector $\mathbf{F}_{470}$ is constructed. It is mostly composed of zeros, with occasional sequences of ones corresponding to **outstanding increases in activity and decreases in rumination**.  
+After scanning the entire chronological sequence with the sliding window, a vector $\widehat{\mathbf{F}}_{470}$ is constructed. It is mostly composed of zeros, with occasional sequences of ones corresponding to **outstanding increases in activity and decreases in rumination**.  
 
 These segments of ones can be **zoomed-in** to extract further information and characterize the behavioral changes at that moment.
+
+What are the optimal values of $u_a$ and $u_r$? This is an optimization problem.
+
+Suppose that we have a TRUE vector $\mathbf{F}_{470}$. Then we can try to find $u_a$ and $u_r$ such that the distance between $\widehat{\mathbf{F}}_{470}$ and $\mathbf{F}_{470}$ is minimized. 
+
+Now as PhD I know many techniques that could serve that propose. However, at the time where I developed this script I was a MS and I didn't knew most of them. At that time, I solved this optimization problem with an iterative and exaustive method. 
+
+For a subset of animals, I had the vector $\mathbf{F}_{.}$ obtained from a **gold standard software** defining `Heat Indices`.  
+
+I then tested an alternative pair of units $(u_{a,1}, u_{r,1})$, which produced an estimated vector $\widehat{\mathbf{F}}_{.,1,1}$. The distance between $\mathbf{F}_{.}$ and $\widehat{\mathbf{F}}_{.,1,1}$ was evaluated using the **F1 score**, denoted $F1_{1,1}$.  
+
+Next, I changed the rumination unit to $u_{r,2}$ while keeping $u_{a,1}$ fixed, obtaining $\widehat{\mathbf{F}}_{.,1,2}$ and the corresponding F1 score $F1_{1,2}$.  
+
+Using this logic, I defined a **domain of units for activity** and a **domain of units for rumination**, then explored all combinations iteratively. For each pair $(u_{a,i}, u_{r,j})$, I computed the corresponding F1 score $F1_{i,j}$.  
+
+Finally, I selected the units $(u_{a,i*}, u_{r,j*})$ that yielded a **local maximum** of the F1 score.  
+
+Currently, I believe there are more **elegant and efficient methods** to solve this optimization problem.
+
 
 
