@@ -71,15 +71,15 @@ Similarly, for **rumination**:
 
 The **past rumination threshold** is defined as:  
 
-\[
+$$
 T_{2,470,3240} = \text{mean}(w_3) - 0.5 \cdot \text{SD}(w_3) = 48 - 0.5 \cdot 14.7 = 40.65 \approx 40.6
-\]  
+$$
 
 For a given iteration $t$, a **change in behavior** is flagged when:  
 
-\[
+$$
 \text{smoothed activity from } w_1 > T_{1,470,t} \quad \text{and} \quad \text{smoothed rumination from } w_1 < T_{2,470,t}
-\]  
+$$
 
 If the condition holds, a variable $F_{470,t} = 1$ is defined. Otherwise, $F_{470,t} = 0$.  
 
