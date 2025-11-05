@@ -62,7 +62,7 @@ At each 2-hour increment, computations are triggered using the data inside $w_1$
 The **past activity threshold** for `ID 470` at iteration `3240` is defined as:  
 
 $$
-T_{a,470,3240} = a_{3_1, 470, 3240} + 2 \times $a_{3_2, 470, 3240}$ = 41.9 + 2 \times 10.5 = 62.9
+T_{a,470,3240} = a_{3_1, 470, 3240} + 2 \times a_{3_2, 470, 3240} = 41.9 + 2 \times 10.5 = 62.9
 $$  
 
 Similarly, for **rumination**:  
@@ -78,13 +78,15 @@ $$
 T_{r,470,3240} = r_{3_1, 470, 3240} - 0.5 \times r_{3_2, 470, 3240} = 48 - 0.5 \times 14.7 = 40.65 \approx 40.6
 $$
 
-For a given iteration $t$, a **change in behavior** is flagged when:  
+For a given iteration $t$ and `ID=470`, a **change in behavior** is flagged when:  
 
 $$
 a_{1, 470, t} >= T_{a,470,t} \quad \text{and} \quad r_{1, 470, t} <= T_{2,470,t}
 $$
 
 If the condition holds, a variable $F_{470,t} = 1$ is defined. Otherwise, $F_{470,t} = 0$.  
+
+Once the status of $F_{470,t}$ is defined, we proceed to repeat the process for $t+1$. This hapens iterativewlly, from the first to the last behavioral record of animal 470.
 
 After scanning the entire chronological sequence with the sliding window, a vector $\mathbf{F}_{470}$ is constructed. It is mostly composed of zeros, with occasional sequences of ones corresponding to **outstanding increases in activity and decreases in rumination**.  
 
