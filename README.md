@@ -127,6 +127,8 @@ This grid-search approach is simple and reproducible. However, more efficient op
 
 Once the exact moment is flagged, you can extract the charactewristic of this event. For the propose of my study, I had to extractthe duration, the average increase in activity above the threshold, and the average decrease in rumination below the threshold. The giff below summarices goe from a detected event it is possible to extract magnitudes that confers information of such event.
 
+![xtraction of information in behavioral change](Zoomin.gif)
+
 ## Implementation in base-R
 
 The R script `scanme.R` contains the code for implementing an **overlapping rolling window** on activity and rumination data stored in `fdf.csv`.
