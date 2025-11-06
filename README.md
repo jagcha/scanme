@@ -119,7 +119,7 @@ This grid-search approach is simple and reproducible. However, more efficient op
 
 ## Visualization of trend detection using overlapping rolling wodnows
 
-<video src="DetectionExample.mp4" controls width="600">
+<video src=https://github.com/user-attachments/assets/8adc43b0-d87a-4d91-91b2-3975d3d4ac34 controls width="600">
   Your browser does not support the video tag.
 </video>
 
