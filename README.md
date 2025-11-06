@@ -109,7 +109,7 @@ Now as PhD I know many techniques that could serve that propose. However, at the
 
 For a subset of animals, I had the vector $\mathbf{F}$ obtained from a **gold standard software** defining `Heat Indices`.  
 
-I then tested an alternative pair of units $u_{a,1}, u_{r,1}$, which produced an estimated vector $\mathbf{\hat{F}}$. The distance between $F_{.}$ and $\hat{F}_{.,1,1}$ was evaluated using the **F1 score**, denoted $F1_{1,1}$.
+I then tested an alternative pair of units $u_{a,1}, u_{r,1}$, which produced an estimated vector $\mathbf{\hat{F}}_1$. The distance between $F_{.}$ and $\hat{F}_{.,1,1}$ was evaluated using the **F1 score**, denoted $F1_{1,1}$.
 
 Next, I changed the rumination unit to $u_{r,2}$ while keeping $u_{a,1}$ fixed, obtaining $\widehat{\mathbf{F}}_{.,1,2}$ and the corresponding F1 score $F1_{1,2}$.  
 
