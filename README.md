@@ -109,7 +109,7 @@ At the time when I developed this script I was a MS and I didn't knew most optim
 
 For a subset of animals, I had the vector $\mathbf{F}$ obtained from a **gold standard software** defining `Heat Indices`.  
 
-I then tested an alternative pair of units $u_{a,1}, u_{r,1}$, which produced an estimated vector $\mathbf{\widehat{F_{1,1}}}$. [CHECK] $\widehat{\mathbf{F}}_{470}$. The distance between $\mathbf{F}$ and $\mathbf{\hat{F_{1,1}}}$ was evaluated using the **F1 score**. For $u_{a,1}, u_{r,1}$, the resulting F1 score is denoted as $F1_{1,1}$.
+I then tested an alternative pair of units $u_{a,1}, u_{r,1}$, which produced an estimated vector $\mathbf{\widehat{F_{1,1}}}$. The distance between $\mathbf{F}$ and $\mathbf{\widehat{F}}_{1,1}$ was evaluated using the **F1 score**. For $u_{a,1}, u_{r,1}$, the resulting F1 score is denoted as $F1_{1,1}$.
 
 Next, I changed the rumination unit to $u_{r,2}$ while keeping $u_{a,1}$ fixed, obtaining $\widehat{\mathbf{F}}_{.,1,2}$ and the corresponding F1 score $F1_{1,2}$.  
 
