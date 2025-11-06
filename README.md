@@ -103,21 +103,21 @@ These segments of ones can be zoomed-in to extract further information and chara
 
 What are the optimal values of $u_a$ and $u_r$?
 
-Suppose that we have a true vector of F for animal 470. Then we can try to find $u_a$ and $u_r$ such that the distance between estimated and observed vector of F is minimized.
+**Estimating the units $u_a$ and $u_r$**
 
-At the time when I developed this script I was a MS and I didn't knew most optimization techniques nowadays I know. At that time, I solved this problem with an iterative and exaustive method. 
+The objective is to find the values of $u_a$ and $u_r$ that best align the estimated flag vector $\widehat{\mathbf{F}}$ with the reference vector $\mathbf{F}$.
 
-For a subset of animals, I had the vector $\mathbf{F}$ obtained from a **gold standard software** defining `Heat Indices`.  
+At the time this procedure was developed, I used a simple, exhaustive grid search over candidate values of $u_a$ and $u_r$. For a subset of animals I had the reference vector $\mathbf{F}$ from a gold-standard software that defines Heat Indices.
 
-I then tested an alternative pair of units $u_{a,1}, u_{r,1}$, which produced an estimated vector $\mathbf{\widehat{F_{1,1}}}$. The distance between $\mathbf{F}$ and $\mathbf{\widehat{F_{1,1}}}$ was evaluated using the **F1 score**. For $u_{a,1}, u_{r,1}$, the resulting F1 score is denoted as $F1_{1,1}$.
+I first tested an initial pair $(u_{a,1}, u_{r,1})$, ran the sliding-window algorithm, and obtained the estimated vector $\mathbf{\widehat{F_{1,1}}}$. The agreement between $\mathbf{F}$ and $\mathbf{\widehat{F_{1,1}}}$ was measured with the F1 score, denoted $F1_{1,1}$.
 
-Next, I changed the rumination unit to $u_{r,2}$ while keeping $u_{a,1}$ fixed, obtaining $\widehat{\mathbf{F}}_{.,1,2}$ and the corresponding F1 score $F1_{1,2}$.  
+Next, I varied the rumination unit to $u_{r,2}$ while keeping $u_{a,1}$ fixed, producing $\mathbf{\widehat{F_{1,2}}}$ and the corresponding score $F1_{1,2}$. 
 
-Using this logic, I defined a **domain of units for activity** and a **domain of units for rumination**, then explored all combinations iteratively. For each pair $(u_{a,i}, u_{r,j})$, I computed the corresponding F1 score $F1_{i,j}$.  
+Repeating this across a predefined domain of activity units and a domain of rumination units, I evaluated every pair $(u_{a,i}, u_{r,j})$ and recorded the F1 score $F1_{i,j}$ for each combination.
 
-Finally, I selected the units $(u_{a,i*}, u_{r,j*})$ that yielded a **local maximum** of the F1 score.  
+The final choice $(u_{a,i^*}, u_{r,j^*})$ was the pair that produced a local maximum of the F1 surface over the explored grid.
 
-Currently, I believe there are more **elegant and efficient methods** to solve this optimization problem.
+This grid-search approach is simple and reproducible. However, more efficient optimization algorithms (for example, Bayesian optimization, coordinate search, or gradient-free methods) could replace the exhaustive search to reduce computation while achieving similar or better results.
 
 
 
