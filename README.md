@@ -172,8 +172,3 @@ For applications involving a large number of animals, and in case you wish to us
 Akidau, T., Balikov, A., Bekiroğlu, K., Chernyak, S., Haberman, J., Lax, R., McVeety, S., Mills, D., Nordstrom, P., & Whittle, S. (2013). *MillWheel: Fault-Tolerant Stream Processing at Internet Scale*.
 
 Verwiebe, J., Grulich, P. M., Traub, J., & Markl, V. (2023). *Survey of window types for aggregation in stream processing systems*.
-
-Singh, T., Kalra, R., Mishra, S., Satakshi, & Kumar, M. (2022). *An efficient real‑time stock prediction exploiting incremental learning and deep learning*.
-
-
-
