@@ -115,7 +115,7 @@ Next, I varied the rumination unit to $u_{r,2}$ while keeping $u_{a,1}$ fixed, p
 
 Repeating this across a predefined domain of activity units and a domain of rumination units, I evaluated every pair $(u_{a,i}, u_{r,j})$ and recorded the F1 score $F1_{i,j}$ for each combination.
 
-The final choice $(u_{a,i^*}, u_{r,j^*})$ was the pair that produced a local maximum of the F1 surface over the explored grid.
+The final choice $(u_{a,i*}, u_{r,j*})$ was the pair that produced a local maximum of the F1 surface over the explored grid.
 
 This grid-search approach is simple and reproducible. However, more efficient optimization algorithms (for example, Bayesian optimization, coordinate search, or gradient-free methods) could replace the exhaustive search to reduce computation while achieving similar or better results.
 
