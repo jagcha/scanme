@@ -59,7 +59,7 @@ scanme <- function(data, w1_width = 16 , w2_width = 48, w3_width = 252, slide = 
     data$n1[idx] <- n1
     data$n3[idx] <- n3
     data$Flag[idx] <- flag
-    # Update upper-bound and idx.
+    # Update idx.
     idx <- idx + 1
   }
   return(data)
