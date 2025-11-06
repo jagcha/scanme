@@ -125,3 +125,27 @@ This grid-search approach is simple and reproducible. However, more efficient op
 
 ## Implementation in base-R
 
+The R script `scanme.R` contains the code for implementing an **overlapping rolling window** on activity and rumination data stored in `fdf.csv`.
+
+> Note: `fdf.csv` is a small snippet randomly selected from my dataset. The data is **not filtered or curated**, so you may observe gaps or missing periods in the time series. This is common in high-frequency data, and I intentionally leave it as-is to reflect realistic, noisy measurements rather than an idealized abstraction.
+
+The main function in the script is `scanme()`. It iterates windows across time-series data according to the logic described in [Logic of Sliding Window](#logic-of-sliding-window).
+
+### Default Parameters
+
+By default, `scanme()` uses the following parameters:
+
+- `w1_width = 16` — width of window 1 in hours  
+- `w2_width = 48` — width of window 2 in hours  
+- `w3_width = 252` — width of window 3 in hours  
+- `slide = 2` — sliding step in hours  
+- `ath = 2` — units of activity used to define the activity threshold  
+- `rth = 0.5` — units of rumination used to define the rumination threshold  
+
+### Input Requirements
+
+The function expects a **data frame** passed to the argument `data`. For proper functioning, the data must include a **DateTime column of class `POSIXct` or `POSIXt`**. The script is tailored to the structure of `fdf.csv`, but the logic can be adapted to other similar datasets.
+
+### Output
+
+The script generates plots of **raw and smoothed activity and rumination**, along with the **Flagged events** indicating behavioral changes.
