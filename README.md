@@ -75,7 +75,7 @@ Similarly, for **rumination**:
 The **past rumination threshold** is defined as (assume $u_r = 0.5$):  
 
 $$
-T_{r,470,3240} = r_{3_1, 470, 3240} - u_r \times r_{3_2, 470, 3240} = 48 - 0.5 \times 14.7 = 40.65 \approx 40.6
+T_{r,470,3240} = r_{3_1, 470, 3240} - u_r \times r_{3_2, 470, 3240} = 48 - 0.5 \times 14.7 = 40.6
 $$
 
 For a given iteration $t$ and `ID=470`, a **change in behavior** is flagged when:  
@@ -85,17 +85,17 @@ a_{1, 470, t} >= T_{a,470,t} \quad \text{and} \quad r_{1, 470, t} <= T_{2,470,t}
 $$
 
 
-If the condition holds, the variable below is defined.
+If the condition above evaluates as `True`, the variable below is defined.
 
 $\hat{F}_{470,t} = 1$
 
 
-If the condition doesn't hold, the variable below is defined.
+If the condition evaluates as `False`, the variable below is defined.
 
 $\hat{F}_{470,t} = 0$
 
 
-Once the status of $\hat{F}_{470t}$ is defined, we proceed to repeat the process for $t+1$. This hapens iterativelly, from the first to the last behavioral record of animal 470.
+Once the status of $\hat{F}_{470,t}$ is defined, we proceed to repeat the process for $t+1$. This hapens iterativelly, from the first to the last behavioral record of animal 470.
 
 After scanning the entire chronological sequensce with the sliding window, a vector $\widehat{\mathbf{F}}_{470}$ is constructed. It is mostly composed of zeros, with occasional sequences of ones corresponding to **outstanding increases in activity and decreases in rumination**.  
 
