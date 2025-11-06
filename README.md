@@ -101,15 +101,15 @@ After scanning the entire chronological sequensce with the sliding window, a vec
 
 These segments of ones can be zoomed-in to extract further information and characterize the behavioral changes at that moment.
 
-What are the optimal values of $u_a$ and $u_r$? This is an optimization problem.
+What are the optimal values of $u_a$ and $u_r$?
 
 Suppose that we have a true vector of F for animal 470. Then we can try to find $u_a$ and $u_r$ such that the distance between estimated and observed vector of F is minimized.
 
-Now as PhD I know many techniques that could serve that propose. However, at the time where I developed this script I was a MS and I didn't knew most of them. At that time, I solved this optimization problem with an iterative and exaustive method. 
+At the time when I developed this script I was a MS and I didn't knew most optimization techniques nowadays I know. At that time, I solved this problem with an iterative and exaustive method. 
 
 For a subset of animals, I had the vector $\mathbf{F}$ obtained from a **gold standard software** defining `Heat Indices`.  
 
-I then tested an alternative pair of units $u_{a,1}, u_{r,1}$, which produced an estimated vector $\mathbf{\hat{F_{1,1}}}$. The distance between $\mathbf{F}$ and $\mathbf{\hat{F_{1,1}}}$ was evaluated using the **F1 score**. For $u_{a,1}, u_{r,1}$, the resulting F1 score is denoted as $F1_{1,1}$.
+I then tested an alternative pair of units $u_{a,1}, u_{r,1}$, which produced an estimated vector $\mathbf{\widehat{F_{1,1}}}$. The distance between $\mathbf{F}$ and $\mathbf{\hat{F_{1,1}}}$ was evaluated using the **F1 score**. For $u_{a,1}, u_{r,1}$, the resulting F1 score is denoted as $F1_{1,1}$.
 
 Next, I changed the rumination unit to $u_{r,2}$ while keeping $u_{a,1}$ fixed, obtaining $\widehat{\mathbf{F}}_{.,1,2}$ and the corresponding F1 score $F1_{1,2}$.  
 
