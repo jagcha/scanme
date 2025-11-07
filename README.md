@@ -160,11 +160,13 @@ The script generates plots of **raw and smoothed activity and rumination**, alon
 
 ## Limitations and Scope
 
-The program `scanme.R` was implemented in base R to provide a clear and fundamental example of sliding-window analysis. The core function, `scanme()`, is computationally intensive and can be slow on large datasets. Performance could be ioptimized.
+The program `scanme.R` was implemented in base R to provide a clear and fundamental example of sliding-window analysis. The core function, `scanme()`, is computationally intensive and can be slow on large datasets. Performance could be optimized.
 
 This repository offers a reproducible, real-world example of how sliding windows can be used to detect time-dependent events in high-frequency behavioral data.
 
 For applications involving a large number of animals, and in case you wish to use `scanme()`, I would recommend leveraging parallel computing.
+
+For other situations, you may want to tune each parameter `w1_width`, `w2_width`, `w3_width`, `slide`, and `ath`, `rth` to match your data.
 
 
 ## References
