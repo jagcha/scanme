@@ -1,6 +1,6 @@
 # scanme
 
-Show how I implement a sliding window to detect changes in activity and rumination.
+Implement a sliding window to detect changes in activity and rumination.
 
 ## Background
 
