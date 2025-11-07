@@ -166,7 +166,9 @@ This repository offers a reproducible, real-world example of how sliding windows
 
 For applications involving a large number of animals, and in case you wish to use `scanme()`, I would recommend leveraging parallel computing.
 
-For other situations, you may want to tune each parameter `w1_width`, `w2_width`, `w3_width`, `slide`, and `ath`, `rth` to match your data.
+For other situations, you may want to tune each parameter `w1_width`, `w2_width`, `w3_width`, `slide`, and `ath`, `rth` to match your needs.
+
+This repository is just a starting point, not a finished recipe. Feel free to adjust it to fit your own context and common sense.
 
 
 ## References
