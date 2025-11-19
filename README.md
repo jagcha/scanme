@@ -115,7 +115,7 @@ Repeating this across a predefined domain of activity units and a domain of rumi
 
 The final choice $(u_{a,i*}, u_{r,j*})$ was the pair that produced a local maximum of the F1 surface over the explored grid.
 
-This grid-search approach is simple and reproducible. However, more efficient optimization algorithms (for example, Bayesian optimization, coordinate search, or gradient-free methods) could replace the exhaustive search to reduce computation while achieving similar or better results.
+This grid-search approach is simple and reproducible. However, more efficient optimization algorithms could replace the exhaustive search to reduce computation while achieving similar or better results.
 
 ## Visualization of trend detection using overlapping rolling wodnows
 
